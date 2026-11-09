@@ -1,0 +1,8 @@
+{
+  "name": "SimuAFRIT",
+  "description": "Generate complete Android applications in Kotlin and Jetpack Compose based on detailed project analysis and requirements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
