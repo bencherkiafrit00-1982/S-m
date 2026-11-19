@@ -25,7 +25,7 @@ import {
   Wrench,
   Cpu,
   Eye,
-  EyeOff,
+  EyeOff, 
   Crosshair,
   Maximize,
   ZoomIn,
@@ -446,8 +446,7 @@ export const InteractiveCanvas: React.FC<InteractiveCanvasProps> = ({
   };
 
   const motor = components.find(c => c.type === 'motor_3phase');
-
-  return (
+ return (
     <div 
       ref={canvasRef}
       className="relative w-full h-full bg-slate-950 overflow-hidden flex flex-col select-none"
@@ -488,6 +487,10 @@ export const InteractiveCanvas: React.FC<InteractiveCanvasProps> = ({
             >
               <span className={`w-1.5 h-1.5 rounded-full ${motor.motorRunning ? 'bg-emerald-400 animate-ping' : 'bg-slate-500'}`} />
               <span>{motor.motorRunning ? `${motor.motorSpeed || 1450} RPM` : 'M1: OFF'}</span>
+              {motor.motorRunning && motor.powerWired === false && (
+                  <span className="text-amber-300">⚠ غير موصول بالقدرة</span>
+                  )}
+              )}
               {motor.motorRunning && (
                 <Volume2 className="w-3 h-3 text-emerald-400 animate-pulse" />
               )}

@@ -24,6 +24,7 @@ export const RealisticIndustrialComponent: React.FC<RealisticIndustrialComponent
     isTripped = false,
     closed = false,
     motorRunning = false,
+    powerWired,
     color,
     linkedTag,
     timerSeconds = 3,
@@ -1123,6 +1124,11 @@ export const RealisticIndustrialComponent: React.FC<RealisticIndustrialComponent
           >
             {isRunning ? '1450 RPM ⟳' : '0 RPM (OFF)'}
           </text>
+          {isRunning && powerWired === false && (
+              <text x={cx} y={cy + 14} textAnchor="middle" fill="#fbbf24" fontSize="5.5" fontWeight="bold">
+                  ⚠ غير موصول بالقدرة هو
+                    </text>
+                    )}ز
 
           {/* Terminals in Top Connection Box (U, V, W) */}
           {terminals.map((t, idx) => (
